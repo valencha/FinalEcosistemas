@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="50dp"
+    android:layout_centerHorizontal="true"
+    android:layout_gravity="center_horizontal"
+    android:background="#F8F8F8"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ayuda y soporte"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#EE5514"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+
+
+        <TextView
+            android:layout_width="297dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:textColor="#5D5D5D"
+            android:layout_gravity="center_horizontal"
+            android:text="Aqui resolveremos todas tus dudas acerca de la plataforma boomerang."
+            android:textAlignment="center" />
+
+     <ExpandableListView
+         android:layout_width="match_parent"
+         android:layout_marginRight="10dp"
+         android:layout_marginLeft="10dp"
+         android:layout_height="match_parent"
+         android:id="@+id/expl"
+         android:layout_marginTop="40dp">
+
+     </ExpandableListView>
+
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

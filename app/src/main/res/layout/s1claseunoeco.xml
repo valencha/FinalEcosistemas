@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+android:layout_marginTop="50dp"
+    tools:context=".Clase1Ecosistemas">
+
+    <LinearLayout
+        android:background="#F8F8F8"
+        android:layout_width="match_parent"
+        android:layout_height="502dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_clase1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Clase 1"
+            android:textAlignment="center"
+            android:textColor="#EE5514"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_tema"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Introduccion a la computación física"
+            android:textAlignment="center"
+            android:textColor="#5D5D5D"
+            android:textStyle="normal" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/recursos" />
+
+        <TextView
+            android:id="@+id/tv_aun"
+            android:layout_width="match_parent"
+            android:layout_height="66dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="60dp"
+            android:text="¿Aún tienes dudas? Revisa los boomerangs que han lanzado tus compañeros, quizás ahi halles la respuesta."
+            android:textAlignment="center"
+            android:textColor="#5D5D5D"
+            android:textStyle="normal" />
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/boomerangs" />
+
+
+        <TextView
+            android:id="@+id/tv_like"
+            android:layout_width="match_parent"
+            android:layout_height="66dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="50dp"
+            android:text="¡Dale like a tus boomerangs favoritos para que más gente los vea!"
+            android:textAlignment="center"
+            android:textColor="#5D5D5D"
+            android:textStyle="normal" />
+
+        <ListView
+            android:id="@+id/lv_preguntas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </ListView>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:id="@+id/btn_lanzar"
+            android:background="@drawable/lanzarboomerang" />
+
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/boton"/>
+
+
+
+
+    </LinearLayout>
+
+
+    </LinearLayout>
+
+
+

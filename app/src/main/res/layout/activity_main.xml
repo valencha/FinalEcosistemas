@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login"
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+    <ImageView
+        android:id="@+id/img_1"
+        android:layout_width="220dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="97dp"
+        android:layout_marginBottom="29dp"
+        android:src="@drawable/logo"
+        app:layout_constraintBottom_toTopOf="@+id/edt_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+        android:id="@+id/edt_name"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:ems="10"
+        android:fontFamily="sans-serif"
+        android:hint="Usuario"
+        android:inputType="number"
+        android:textColorHint="#ffff"
+        android:textColor="#fff"
+        android:backgroundTint="#fff"
+        app:layout_constraintBottom_toTopOf="@+id/edt_pass"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_1" />
+
+    <EditText
+        android:id="@+id/edt_pass"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="69dp"
+        android:ems="10"
+        android:hint="Contraseña"
+        android:textColor="#fff"
+        android:outlineAmbientShadowColor="#ffff"
+        android:inputType="textPassword"
+        android:textColorHint="#ffff"
+        app:layout_constraintBottom_toTopOf="@+id/btn_ingresar"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="#fff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_name" />
+
+    <TextView
+        android:id="@+id/tv_olvido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="18dp"
+        android:text="¿Olvidaste tu contraseña?"
+        android:textColor="#fff"
+        app:layout_constraintBottom_toTopOf="@+id/tv_noCuenta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_ingresar" />
+
+    <TextView
+        android:id="@+id/tv_noCuenta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="31dp"
+        android:text="No tienes cuenta"
+        android:textColor="#fff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_olvido"
+        app:layout_constraintTop_toBottomOf="@+id/tv_olvido" />
+
+
+    <Button
+        android:id="@+id/btn_ingresar"
+        android:layout_width="0dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="57dp"
+        android:layout_marginEnd="57dp"
+        android:layout_marginBottom="47dp"
+        android:background="@null"
+        android:textColor="#fff"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toTopOf="@+id/tv_olvido"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_pass" />
+
+</android.support.constraint.ConstraintLayout>

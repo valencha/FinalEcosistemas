@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">FinalEcosistemas</string>
+    <string name="title_activity_hamburquesa">Hamburquesa</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_burger">burger</string>
+    <string name="nav_Cursos">CURSOS</string>
+    <string name="nav_Juega">JUEGA</string>
+    <string name="nav_Ayuda">AYUDA</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

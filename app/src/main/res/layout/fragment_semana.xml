@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+
+    tools:openDrawer="start">
+
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:background="#Fff"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:layout_marginTop="50dp">
+
+
+
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="151dp"
+                        android:src="@drawable/ecos" />
+
+
+                    <TextView
+                        android:layout_width="298dp"
+                        android:layout_height="49dp"
+                        android:layout_marginTop="20dp"
+                        android:text="¡Vaya, son muchos temas! por suerte, los hemos clasificado por semanas sólo para ti."
+                        android:textAlignment="center"
+                        android:layout_gravity="center_horizontal"
+                        />
+
+
+                    <ListView
+                        android:background="#F8F8F8"
+                        android:id="@+id/lv_semanas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="313dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center_horizontal"
+                        android:divider="#F8F8F8"
+                        android:dividerHeight="0.2px"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:textAlignment="center">
+
+                    </ListView>
+
+
+                </LinearLayout>
+            </FrameLayout>
+
+
+        </RelativeLayout>
+
+
+
+
+
+
+

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="50dp"
+    android:background="#ffff"
+    app:layout_behavior="appbar_scrolling_view_behavior"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="CURSOS"
+                android:textColor="#EE5514"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="169dp"
+                tools:layout_editor_absoluteY="53dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Aqui puedes ver los cursos que estás tomando."
+                android:textColor="#5D5D5D"
+                tools:layout_editor_absoluteX="169dp"
+                tools:layout_editor_absoluteY="53dp" />
+
+            <ImageView
+                android:layout_marginTop="20dp"
+                android:layout_width="316dp"
+                android:layout_height="133dp"
+                android:id="@+id/img_1"
+                android:src="@drawable/ecosistemas" />
+
+            <ImageView
+                android:layout_width="316dp"
+                android:layout_height="133dp"
+                android:id="@+id/img_2"
+                android:src="@drawable/arqui" />
+
+            <ImageView
+                android:layout_width="316dp"
+                android:layout_height="133dp"
+                android:id="@+id/img_3"
+                android:src="@drawable/percep" />
+        </LinearLayout>
+
+
+
+
+    </RelativeLayout>
+
+
+

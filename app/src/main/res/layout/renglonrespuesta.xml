@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="148dp"
+    android:orientation="vertical"
+    android:background="@drawable/contenedor">
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="hi"
+                android:textSize="12dp"
+                android:textColor="#B8B8B8"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                />
+
+            <Button
+                android:layout_width="25dp"
+                android:layout_height="21dp"
+                android:layout_marginLeft="300dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/descargar"
+                 />
+
+            <Button
+                android:layout_width="24dp"
+                android:layout_height="21dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/megusta"
+                android:id="@+id/btn_like"
+                 />
+
+        </LinearLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="hi"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:textColor="#EE5514"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="hi"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textColor="#5D5D5D"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/tv_pregunta"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="14dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/like" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/tv_like"
+            android:text="1"/>
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="14dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/boomerang"
+           />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="10dp"
+            android:text="1"
+            android:id="@+id/tv_respuestas"/>
+
+        <ImageView
+            android:layout_width="23dp"
+            android:layout_height="14dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/time" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/tv_time"
+            android:text="1"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>
