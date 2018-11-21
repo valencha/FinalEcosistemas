@@ -116,12 +116,38 @@ public class Home extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_perfil) {
+        if (id == R.id.nav_notifi) {
             // Handle the camera action
-        } else if (id == R.id.nav_sesion) {
+        } else if (id == R.id.nav_misboo) {
 
         }
 
+        else if (id == R.id.nav_retornos) {
+
+        }
+
+
+        else if (id == R.id.nav_guardados) {
+
+        }
+
+
+        else if (id == R.id.nav_popular) {
+
+        }
+
+        else if (id == R.id.nav_fav) {
+
+        }
+
+        else if (id == R.id.nav_ranking) {
+
+        }
+
+
+        else if (id == R.id.nav_configuracion) {
+
+        }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

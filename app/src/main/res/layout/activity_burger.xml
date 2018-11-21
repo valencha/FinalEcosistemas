@@ -16,13 +16,18 @@
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
+        app:itemIconTint="@color/colorIcono"
         app:headerLayout="@layout/nav_header_burger"
         app:menu="@menu/activity_burger_drawer"
-        />
+        app:itemTextColor="#999999"
+        android:layout_marginLeft="342dp"/>
+
+
+
 
 <RelativeLayout
     android:layout_width="match_parent"

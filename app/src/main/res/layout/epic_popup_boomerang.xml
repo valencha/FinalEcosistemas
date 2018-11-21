@@ -54,11 +54,12 @@
             android:textStyle="normal" />
 
         <Button
-            android:layout_width="410dp"
-            android:layout_height="wrap_content"
+            android:layout_width="210dp"
+            android:layout_height="49dp"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
-            android:id="@+id/btn_entendido"
-           android:text="ententido" />
+            android:background="@drawable/entendido"
+            android:id="@+id/btn_entendido" />
 
 
     </LinearLayout>

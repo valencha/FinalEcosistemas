@@ -3,21 +3,68 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_perfil"
-            android:title="Editar perfil" />
-
-
-    </group>
-
-    <item android:title="">
-        <menu>
             <item
-                android:id="@+id/nav_sesion"
-                android:title="Cerrar Sesión" />
+                android:id="@+id/nav_notifi"
+                android:title="Notificaciones"
+                android:icon="@drawable/notificaciones"
+                android:iconTint="#EE5514"
+                />
 
-        </menu>
-    </item>
+    <item
+    android:id="@+id/nav_misboo"
+    android:title="Mis Boomerangs"
+    android:icon="@drawable/boom"
+    android:iconTint="#EE5514"/>
+
+
+    <item
+        android:id="@+id/nav_retornos"
+        android:title="Mis retornos"
+        android:icon="@drawable/comparte"
+        android:iconTint="#EE5514"/>
+
+
+
+<group android:checkableBehavior="single" android:menuCategory="container">
+
+        <item
+            android:id="@+id/nav_guardados"
+            android:title="Guardados"
+            android:icon="@drawable/descarga"
+            android:iconTint="#EE5514"/>
+
+
+
+</group>
+
+
+    <item
+        android:id="@+id/nav_popular"
+        android:title="Lo más popular"
+        android:icon="@drawable/estrella"
+        android:iconTint="#EE5514"/>
+
+
+    <item
+    android:id="@+id/nav_fav"
+    android:title="Mis favoritos"
+    android:icon="@drawable/fav"
+    android:iconTint="#EE5514"/>
+
+
+    <item
+        android:id="@+id/nav_ranking"
+        android:title="Ver ranking"
+        android:icon="@drawable/trofeo"
+        android:iconTint="#EE5514"/>
+
+    <item
+        android:id="@+id/nav_configuracion"
+        android:title="Configuración"
+        android:icon="@drawable/tuerca"
+        android:iconTint="#EE5514"/>
+
+
+
 
 </menu>
