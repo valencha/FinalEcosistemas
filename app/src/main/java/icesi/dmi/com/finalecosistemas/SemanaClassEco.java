@@ -1,12 +1,12 @@
 package icesi.dmi.com.finalecosistemas;
 
-public class SemanaClass {
+public class SemanaClassEco {
 
     private String tipo;
 
 
 
-    public SemanaClass(String tipo){
+    public SemanaClassEco(String tipo){
 
         this.tipo=tipo;
 

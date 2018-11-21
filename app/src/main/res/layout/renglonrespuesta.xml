@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="390dp"
     android:layout_height="148dp"
     android:orientation="vertical"
-    android:background="@drawable/contenedor">
+    android:layout_gravity="center_horizontal"
+    android:background="@drawable/contenedor"
+    >
 
 
 
@@ -15,6 +17,7 @@
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/tv_etiqueta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="hi"
@@ -27,7 +30,7 @@
             <Button
                 android:layout_width="25dp"
                 android:layout_height="21dp"
-                android:layout_marginLeft="300dp"
+                android:layout_marginLeft="240dp"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/descargar"
                  />
@@ -35,8 +38,8 @@
             <Button
                 android:layout_width="24dp"
                 android:layout_height="21dp"
+                android:layout_marginLeft="12dp"
                 android:layout_marginTop="15dp"
-                android:layout_marginLeft="15dp"
                 android:background="@drawable/megusta"
                 android:id="@+id/btn_like"
                  />

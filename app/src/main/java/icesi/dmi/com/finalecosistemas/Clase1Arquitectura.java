@@ -1,10 +1,9 @@
 package icesi.dmi.com.finalecosistemas;
 
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.os.Bundle;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,7 +21,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 
-public class Clase1Ecosistemas extends Fragment{
+public class Clase1Arquitectura extends Fragment{
 
     Button btn_lanzarBoomerang,btn_megusta;
     TextView tv_likes,tv_boomerangs;
@@ -34,7 +33,7 @@ public class Clase1Ecosistemas extends Fragment{
 
 
         public View onCreateView(@NonNull final LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable final Bundle savedInstanceState) {
-            final View view=inflater.inflate(R.layout.s1claseunoeco, container, false);
+            final View view=inflater.inflate(R.layout.s1claseunoarqui, container, false);
 
 
 
@@ -54,7 +53,7 @@ public class Clase1Ecosistemas extends Fragment{
 
 
 
-          Query preguntas= reference.child("usuarios").child("preguntas");
+          Query preguntas= reference.child("usuarios").child("preguntasArqui");
 
            final FirebaseListOptions<Pregunta> options= new FirebaseListOptions.Builder<Pregunta>().setLayout(R.layout.renglonrespuesta).setQuery(preguntas, Pregunta.class).build();
 
@@ -76,11 +75,11 @@ public class Clase1Ecosistemas extends Fragment{
                         @Override
                         public void onClick(View v) {
                            listAdapter.getItem(position);
-                            database.getReference().child("usuarios").child("preguntas").child("megustas").push().setValue("F");
+                            database.getReference().child("usuarios").child("preguntasArqui").child("megustas").push().setValue("F");
                         }
                     });
 
-                    database.getReference().child("usuarios").child("preguntas").child("megustas").addValueEventListener(new ValueEventListener() {
+                    database.getReference().child("usuarios").child("preguntasArqui").child("megustas").addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
@@ -129,7 +128,7 @@ public class Clase1Ecosistemas extends Fragment{
 
 
 
-            database.getReference().child("usuarios").child("preguntas").addValueEventListener(new ValueEventListener() {
+            database.getReference().child("usuarios").child("preguntasArqui").addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
@@ -148,7 +147,7 @@ public class Clase1Ecosistemas extends Fragment{
                 @Override
                 public void onClick(View v) {
                     getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                            new CreaPreguntaEco()).commit();
+                            new CreaPreguntaArqui()).commit();
 
                 }
             });

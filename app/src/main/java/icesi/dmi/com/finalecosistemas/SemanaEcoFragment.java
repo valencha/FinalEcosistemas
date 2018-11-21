@@ -9,17 +9,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-public class SemanaFragment extends Fragment {
+public class SemanaEcoFragment extends Fragment {
 
 
     ListView lv_semana;
-    SemanaAdapter customAdapter;
+    SemanaEcoAdapter customAdapter;
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_semana, container, false);
 
         lv_semana = view.findViewById(R.id.lv_semanas);
-        customAdapter = new SemanaAdapter(this);
+        customAdapter = new SemanaEcoAdapter(this);
 
         lv_semana.setAdapter(customAdapter);
         String titulo1 = "titulo1";
@@ -29,20 +29,20 @@ public class SemanaFragment extends Fragment {
         String s1clase2 = "s1clase2";
 
 
-        SemanaClass newSemana1 = new SemanaClass(titulo1);
+        SemanaClassEco newSemana1 = new SemanaClassEco(titulo1);
         customAdapter.agregarImagen(newSemana1);
 
-        SemanaClass newS1clase1 = new SemanaClass(s1clase1);
+        SemanaClassEco newS1clase1 = new SemanaClassEco(s1clase1);
         customAdapter.agregarImagen(newS1clase1);
 
 
-        SemanaClass newS1clase2 = new SemanaClass(s1clase2);
+        SemanaClassEco newS1clase2 = new SemanaClassEco(s1clase2);
         customAdapter.agregarImagen(newS1clase2);
 
-        SemanaClass newSemana2 = new SemanaClass(titulo2);
+        SemanaClassEco newSemana2 = new SemanaClassEco(titulo2);
         customAdapter.agregarImagen(newSemana2);
 
-        SemanaClass newSemana3 = new SemanaClass(titulo3);
+        SemanaClassEco newSemana3 = new SemanaClassEco(titulo3);
         customAdapter.agregarImagen(newSemana3);
 
         return view;

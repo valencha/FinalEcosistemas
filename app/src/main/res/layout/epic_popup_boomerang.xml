@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="410dp"
+    android:layout_height="fill_parent"
+    android:background="@color/colorTransparent"
+    android:layout_centerHorizontal="true"
+    android:layout_gravity="center_horizontal"
+    android:orientation="vertical"
+    android:gravity="center">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="412dp"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorWhiteTransparent"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/img_lanzado"
+            android:layout_width="122dp"
+            android:layout_height="90dp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="100dp"
+            android:background="@color/colorTransparent"
+            android:src="@drawable/fastboomerang" />
+
+        <TextView
+            android:id="@+id/tv_clase1"
+            android:layout_width="410dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:text="¡Tu boomerang se ha lanzado!"
+            android:textAlignment="center"
+            android:textColor="#EE5514"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/tv_tema"
+            android:layout_width="410dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:text="Ahora solo debes esperar a que regrese..."
+            android:textAlignment="center"
+            android:textColor="#5D5D5D"
+            android:textStyle="normal" />
+
+        <Button
+            android:layout_width="410dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:id="@+id/btn_entendido"
+           android:text="ententido" />
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,12 +1,6 @@
 package icesi.dmi.com.finalecosistemas;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,29 +9,25 @@ import android.widget.ImageView;
 
 import java.util.ArrayList;
 
-import static java.security.AccessController.getContext;
-
-public class SemanaAdapter extends BaseAdapter{
-    ArrayList<SemanaClass>semanaClasses;
+public class SemanaArquiAdapter extends BaseAdapter{
+    ArrayList<SemanaClassArqui> semanaClassArquis;
     Fragment fragment;
 
 
-    public SemanaAdapter(Fragment fragment){
+    public SemanaArquiAdapter(Fragment fragment){
         this.fragment = fragment;
-        semanaClasses= new ArrayList<>();
-
-
+        semanaClassArquis = new ArrayList<>();
 
     }
 
     @Override
     public int getCount() {
-        return semanaClasses.size();
+        return semanaClassArquis.size();
     }
 
     @Override
     public Object getItem(int i) {
-        return semanaClasses.get(i);
+        return semanaClassArquis.get(i);
     }
 
     @Override
@@ -60,7 +50,7 @@ public class SemanaAdapter extends BaseAdapter{
 
 
 
-       String tipo=semanaClasses.get(position).getTipo();
+       String tipo= semanaClassArquis.get(position).getTipo();
 
 
     if(tipo.equals("titulo1")){
@@ -69,7 +59,7 @@ public class SemanaAdapter extends BaseAdapter{
 
         }    else  if (tipo.equals("s1clase1") ) {
 
-        img_list.setImageResource(R.drawable.s1clase1eco);
+        img_list.setImageResource(R.drawable.s1clase1arqui);
 
         img_list.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,7 +67,7 @@ public class SemanaAdapter extends BaseAdapter{
 
 
                 fragment.getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new Clase1Ecosistemas()).commit();
+                        new Clase1Arquitectura()).commit();
             }
         });
 
@@ -85,7 +75,7 @@ public class SemanaAdapter extends BaseAdapter{
 
     else  if (tipo.equals("s1clase2") ) {
 
-        img_list.setImageResource(R.drawable.s1clase2eco);
+        img_list.setImageResource(R.drawable.s1clase2arqui);
 
     }
 
@@ -115,9 +105,9 @@ public class SemanaAdapter extends BaseAdapter{
         return renglon;
     }
 
-    public void agregarImagen(SemanaClass semanaClass){
+    public void agregarImagen(SemanaClassArqui semanaClassArqui){
 
-       semanaClasses.add(semanaClass);
+       semanaClassArquis.add(semanaClassArqui);
 
 
     }

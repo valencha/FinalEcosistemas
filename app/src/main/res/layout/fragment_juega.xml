@@ -10,28 +10,30 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
         android:gravity="center"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Partida competitiva"
             android:layout_marginTop="20dp"
+            android:text="Partida competitiva"
             android:textColor="#EE5514"
             android:textSize="20dp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
 
         <TextView
             android:layout_width="297dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:textColor="#5D5D5D"
-
             android:text="¿Listo para algo de acción?
 Ingresa el código que te muestre tu profesor para iniciar la partida."
-            android:textAlignment="center" />
+
+            android:textAlignment="center"
+            android:textColor="#5D5D5D" />
 
 
         <EditText
@@ -39,10 +41,9 @@ Ingresa el código que te muestre tu profesor para iniciar la partida."
             android:layout_width="303dp"
             android:layout_height="47dp"
             android:layout_marginTop="100dp"
-            android:hint="Escribe tu pin aquí"
-            android:textAlignment="center"
             android:background="@drawable/style_edtext"
-            />
+            android:hint="Escribe tu pin aquí"
+            android:textAlignment="center" />
 
 
         <Button

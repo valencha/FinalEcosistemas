@@ -53,10 +53,17 @@ public class Home extends AppCompatActivity
 
                     Fragment selectedFragment = null;
                     switch (item.getItemId()) {
+
+
+
+
                         case R.id.nav_curso:
                             selectedFragment = new CursoFragment();
                             break;
 
+                        case R.id.nav_buscar:
+                            selectedFragment = new BuscaFragment();
+                            break;
 
                         case R.id.nav_juega:
                             selectedFragment = new JuegaFragment();
@@ -86,19 +93,16 @@ public class Home extends AppCompatActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
+
         getMenuInflater().inflate(R.menu.burger, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }

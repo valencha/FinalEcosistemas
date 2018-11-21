@@ -1,15 +1,20 @@
 package icesi.dmi.com.finalecosistemas;
 
 import android.view.View;
+import android.widget.Button;
 
 public class Pregunta {
 
 
     String name;
-  String pregunta;
+    String pregunta;
     String etiqueta;
 
+
+
+
     public Pregunta(){}
+
 
     public String getName() {
         return name;
@@ -33,4 +38,6 @@ public class Pregunta {
     public void setEtiqueta(String etiqueta) {
         this.etiqueta = etiqueta;
     }
+
+
 }

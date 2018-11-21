@@ -3,7 +3,8 @@
     <item android:state_checked="true"
         android:color = "#EE5514">
     </item>
-    <item android:color="@android:color/darker_gray"  />
+    <item android:state_checked="false"
+        android:color="@color/design_default_color_primary_dark"  />
 
 
 

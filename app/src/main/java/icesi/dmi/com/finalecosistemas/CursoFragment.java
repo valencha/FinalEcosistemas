@@ -30,7 +30,16 @@ FragmentActivity fragment;
             @Override
             public void onClick(View v) {
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new SemanaFragment()).commit();
+                        new SemanaEcoFragment()).commit();
+
+            }
+        });
+
+        img2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new SemanaArquiFragment()).commit();
 
             }
         });

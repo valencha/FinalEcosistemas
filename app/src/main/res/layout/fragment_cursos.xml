@@ -20,7 +20,6 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:text="CURSOS"
                 android:textColor="#EE5514"
                 android:textSize="20dp"
@@ -40,20 +39,22 @@
 
             <ImageView
                 android:layout_marginTop="20dp"
-                android:layout_width="316dp"
+                android:layout_width="match_parent"
                 android:layout_height="133dp"
                 android:id="@+id/img_1"
                 android:src="@drawable/ecosistemas" />
 
             <ImageView
-                android:layout_width="316dp"
+                android:layout_width="match_parent"
                 android:layout_height="133dp"
+                android:layout_marginTop="15dp"
                 android:id="@+id/img_2"
                 android:src="@drawable/arqui" />
 
             <ImageView
-                android:layout_width="316dp"
+                android:layout_width="match_parent"
                 android:layout_height="133dp"
+                android:layout_marginTop="15dp"
                 android:id="@+id/img_3"
                 android:src="@drawable/percep" />
         </LinearLayout>

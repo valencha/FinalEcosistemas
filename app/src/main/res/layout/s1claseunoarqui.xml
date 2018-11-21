@@ -15,10 +15,10 @@
 
         <TextView
             android:id="@+id/tv_clase1"
-            android:layout_marginTop="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Clase 1"
+            android:layout_marginTop="30dp"
             android:textAlignment="center"
             android:textColor="#EE5514"
             android:textSize="20dp"
@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Introduccion a la computación física"
+            android:text="¿Qué es la arquitectura de información?"
             android:textAlignment="center"
             android:textColor="#5D5D5D"
             android:textStyle="bold" />
@@ -110,12 +110,6 @@
             android:layout_height="fill_parent"
             android:layout_gravity="center_horizontal">
         </ListView>
-
-
-
-
-
-
 
         <android.support.design.widget.FloatingActionButton
             android:layout_width="wrap_content"
