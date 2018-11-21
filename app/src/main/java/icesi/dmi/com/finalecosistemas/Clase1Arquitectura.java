@@ -35,9 +35,6 @@ public class Clase1Arquitectura extends Fragment{
         public View onCreateView(@NonNull final LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable final Bundle savedInstanceState) {
             final View view=inflater.inflate(R.layout.s1claseunoarqui, container, false);
 
-
-
-
             btn_lanzarBoomerang = view.findViewById(R.id.btn_lanzar);
 
             lv_preguntas= view.findViewById(R.id.lv_preguntas);

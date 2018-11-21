@@ -119,10 +119,19 @@
             >
         </icesi.dmi.com.finalecosistemas.ExpandableHeightListView>
 
-        <android.support.design.widget.FloatingActionButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/boton" />
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorTransparent"
+        android:clickable="true"
+        android:padding="15dp"
+        android:layout_gravity="end"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/boton"
+        app:backgroundTint="@drawable/gradient"
+        app:layout_anchorGravity="bottom|right|end" />
 
 
     </LinearLayout>
