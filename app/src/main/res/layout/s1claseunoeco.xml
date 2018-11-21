@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_marginTop="50dp"
+    android:fillViewport="true"
+    android:scrollbars="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
 
 <LinearLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_gravity="center_horizontal"
-    android:layout_marginTop="50dp"
     android:background="#F8F8F8"
     android:orientation="vertical"
     android:scrollbars="vertical"
-
-
     xmlns:android="http://schemas.android.com/apk/res/android">
+
 
         <TextView
             android:id="@+id/tv_clase1"
@@ -104,18 +108,16 @@
         android:layout_marginRight="30dp"
         android:background="@drawable/lanzarboomerang" />
 
-        <ListView android:scrollbars="none"
+
+
+
+        <icesi.dmi.com.finalecosistemas.ExpandableHeightListView
             android:id="@+id/lv_preguntas"
             android:layout_width="390dp"
-            android:layout_height="fill_parent"
-            android:layout_gravity="center_horizontal">
-        </ListView>
-
-
-
-
-
-
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            >
+        </icesi.dmi.com.finalecosistemas.ExpandableHeightListView>
 
         <android.support.design.widget.FloatingActionButton
             android:layout_width="wrap_content"
@@ -124,3 +126,4 @@
 
 
     </LinearLayout>
+</ScrollView>

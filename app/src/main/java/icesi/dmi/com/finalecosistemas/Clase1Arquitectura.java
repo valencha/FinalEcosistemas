@@ -25,7 +25,7 @@ public class Clase1Arquitectura extends Fragment{
 
     Button btn_lanzarBoomerang,btn_megusta;
     TextView tv_likes,tv_boomerangs;
-    ListView lv_preguntas;
+    ExpandableHeightListView lv_preguntas;
     FirebaseDatabase database;
 
     FirebaseListAdapter<Pregunta> listAdapter;

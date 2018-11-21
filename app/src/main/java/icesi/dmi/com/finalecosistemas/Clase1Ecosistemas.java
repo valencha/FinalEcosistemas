@@ -26,7 +26,7 @@ public class Clase1Ecosistemas extends Fragment{
 
     Button btn_lanzarBoomerang,btn_megusta;
     TextView tv_likes,tv_boomerangs;
-    ListView lv_preguntas;
+        ExpandableHeightListView lv_preguntas;
     FirebaseDatabase database;
 
     FirebaseListAdapter<Pregunta> listAdapter;
@@ -35,9 +35,6 @@ public class Clase1Ecosistemas extends Fragment{
 
         public View onCreateView(@NonNull final LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable final Bundle savedInstanceState) {
             final View view=inflater.inflate(R.layout.s1claseunoeco, container, false);
-
-
-
 
             btn_lanzarBoomerang = view.findViewById(R.id.btn_lanzar);
 
@@ -52,9 +49,7 @@ public class Clase1Ecosistemas extends Fragment{
             DatabaseReference reference = database.getReference();
 
 
-
-
-          Query preguntas= reference.child("usuarios").child("preguntas");
+            Query preguntas= reference.child("usuarios").child("preguntas");
 
            final FirebaseListOptions<Pregunta> options= new FirebaseListOptions.Builder<Pregunta>().setLayout(R.layout.renglonrespuesta).setQuery(preguntas, Pregunta.class).build();
 
