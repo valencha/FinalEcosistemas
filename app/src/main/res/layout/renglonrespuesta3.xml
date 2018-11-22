@@ -2,43 +2,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="390dp"
-    android:layout_height="148dp"
+    android:layout_height="360dp"
     android:orientation="vertical"
     android:layout_gravity="center_horizontal"
     android:background="@drawable/contenedor"
     >
 
-
-
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_weight="1">
-            <TextView
-                android:id="@+id/tv_etiqueta"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="hi"
-                android:textSize="12dp"
-                android:textColor="#B8B8B8"
-                android:layout_marginLeft="25dp"
-                android:layout_marginTop="15dp"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_weight="3">
+            android:layout_marginLeft="305dp"
+           >
 
             <Button
                 android:id="@+id/retorno"
@@ -57,12 +32,6 @@
                 android:background="@drawable/megusta"
                 android:id="@+id/btn_like"
                 />
-        </LinearLayout>
-
-
-
-
-
 
     </LinearLayout>
 
@@ -94,29 +63,63 @@
                 android:layout_marginTop="5dp" />
 
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="hi"
-                android:textSize="15dp"
-                android:textStyle="bold"
-                android:textColor="#5D5D5D"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:id="@+id/tv_pregunta"
-                />
         </LinearLayout>
 
 
 
     </LinearLayout>
 
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="354dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_height="100dp"
+        android:background="@drawable/respondida">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/name"
+        android:textColor="@color/colorIcono"
+        android:text="Nombre del usuario"
+        android:textStyle="bold"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+       />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/preguntarespondida"
+                android:textColor="#5D5D5D"
+                android:text="preguntarespondia"
+                android:textStyle="normal"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                />
+
+        </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:text="kmfwevmwvmwpvmwmvwmvpwmvpwmvmwvvnwvnwnvwvwnvpwnvpnwvpwnvvnwppnvwnvnvpwnvpwv"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
 
 
         <ImageView
@@ -167,16 +170,5 @@
 
 
     </LinearLayout>
-
-    <icesi.dmi.com.finalecosistemas.ExpandableHeightListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="40dp"
-        android:id="@+id/lv_respondidas">
-
-
-
-    </icesi.dmi.com.finalecosistemas.ExpandableHeightListView>
-
 
 </LinearLayout>
