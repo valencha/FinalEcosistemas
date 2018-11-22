@@ -10,26 +10,29 @@
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    <ImageView
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/preguntaenresponder"/>
+        android:layout_gravity="center">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="90dp"
+            android:layout_marginBottom="300dp"
+            android:src="@drawable/contenedorrespuesta" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Pregunta a responder"
-            android:textStyle="bold"
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="10dp"
 
-            android:textColor="#5D5D5D"
-            android:textSize="18dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="30dp"/>
+                android:text="Respuesta"
+                android:textColor="#5D5D5D"
+                android:textSize="18dp"
+                android:textStyle="bold" />
         </LinearLayout>
 
 
@@ -61,7 +64,7 @@
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="380dp"
-        android:layout_height="wrap_content"
+        android:layout_height="420dp"
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
 
@@ -94,7 +97,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="420dp"
+                android:layout_marginTop="370dp"
                android:layout_marginLeft="280dp"
                 android:text="Responder"
                 android:textColor="@color/colorIcono"
