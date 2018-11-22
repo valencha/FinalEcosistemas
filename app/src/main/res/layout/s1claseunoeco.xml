@@ -74,11 +74,11 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/tv_boomerang"
+                android:id="@+id/tv_boomerangs"
                 android:layout_width="52dp"
                 android:layout_height="29dp"
                 android:layout_marginEnd="40dp"
-                android:text="12"
+                android:text="0"
                 android:textAlignment="center"
                 android:textSize="20dp"
                 android:textColor="#fff"
@@ -120,17 +120,15 @@
         </icesi.dmi.com.finalecosistemas.ExpandableHeightListView>
 
     <android.support.design.widget.FloatingActionButton
-        android:layout_width="65dp"
-        android:layout_height="65dp"
-        android:layout_marginLeft="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:background="@color/colorTransparent"
-        android:clickable="true"
         android:padding="15dp"
+        android:src="@drawable/boton"
         android:layout_gravity="end"
         android:layout_marginRight="10dp"
-        android:src="@drawable/boton"
-        app:backgroundTint="@drawable/gradient"
+        app:backgroundTint="@color/colorIcono"
         app:layout_anchorGravity="bottom|right|end" />
 
 

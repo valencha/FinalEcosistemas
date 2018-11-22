@@ -9,7 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseListAdapter;
@@ -24,10 +26,10 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Clase1Ecosistemas extends Fragment{
 
-    Button btn_lanzarBoomerang,btn_megusta;
-    TextView tv_likes,tv_boomerangs;
+    Button btn_lanzarBoomerang;
+    TextView tv_boomerangs;
     ExpandableHeightListView lv_preguntas;
-    FirebaseDatabase database;
+    FirebaseDatabase db;
 
     FirebaseListAdapter<Pregunta> listAdapter;
 
@@ -40,13 +42,13 @@ public class Clase1Ecosistemas extends Fragment{
 
             lv_preguntas= view.findViewById(R.id.lv_preguntas);
 
-            tv_likes = view.findViewById(R.id.tv_like);
+            tv_boomerangs = view.findViewById(R.id.tv_boomerangs);
 
-            tv_boomerangs = view.findViewById(R.id.tv_boomerang);
+            db = FirebaseDatabase.getInstance();
 
-            database = FirebaseDatabase.getInstance();
 
-            DatabaseReference reference = database.getReference();
+
+            DatabaseReference reference = db.getReference();
 
 
             Query preguntas= reference.child("usuarios").child("preguntas");
@@ -59,33 +61,28 @@ public class Clase1Ecosistemas extends Fragment{
             listAdapter = new FirebaseListAdapter<Pregunta>(options) {
 
 
-                @NonNull
-                public View view(final int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-                    View view1=inflater.inflate(R.layout.renglonrespuesta, container, false);
-                    Button btn_megusta = view1.findViewById(R.id.btn_like);
-                    final TextView tv_likes = view1.findViewById(R.id.tv_like);
+                @Override
+                protected void populateView(@NonNull View v, @NonNull Pregunta model, final int position) {
+
+                    Button btn_megusta = v.findViewById(R.id.btn_like);
+                    TextView pregunta = v.findViewById(R.id.tv_pregunta);
+                    TextView etiqueta= v.findViewById(R.id.tv_etiqueta);
 
 
+                   final TextView tvLikes= v.findViewById(R.id.tv_like);
 
-                    btn_megusta.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                           listAdapter.getItem(position);
-                            database.getReference().child("usuarios").child("preguntas").child("megustas").push().setValue("F");
-                        }
-                    });
 
-                    database.getReference().child("usuarios").child("preguntas").child("megustas").addValueEventListener(new ValueEventListener() {
+                   pregunta.setText(model.getPregunta());
+
+                   etiqueta.setText(model.getEtiqueta());
+
+                    db.getReference().child("usuarios").child("preguntas").addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                            listAdapter.getItem(position);
-                            String likes= dataSnapshot.getChildrenCount()+"";
+                            String views = Integer.toString((int) dataSnapshot.getChildrenCount()) ;
 
-                            tv_likes.setText(likes);
-
-
-
+                            tv_boomerangs.setText(views);
                         }
 
                         @Override
@@ -95,23 +92,28 @@ public class Clase1Ecosistemas extends Fragment{
                     });
 
 
-                    return view1;
-                }
+                    btn_megusta.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            listAdapter.getRef(position).child("puntua").push().setValue("F");
+                        }
+                    });
 
 
+                    listAdapter.getRef(position).child("puntua").addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        String likes= Integer.toString((int) dataSnapshot.getChildrenCount());
+                            tvLikes.setText(likes);
 
+                        }
 
-                @Override
-                protected void populateView(@NonNull View v, @NonNull Pregunta model, final int position) {
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
 
+                        }
+                    });
 
-                    TextView pregunta = v.findViewById(R.id.tv_pregunta);
-                    TextView etiqueta= v.findViewById(R.id.tv_etiqueta);
-
-
-                            pregunta.setText(model.getPregunta());
-
-                    etiqueta.setText(model.getEtiqueta());
 
 
 
@@ -124,20 +126,7 @@ public class Clase1Ecosistemas extends Fragment{
 
 
 
-            database.getReference().child("usuarios").child("preguntas").addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                    String preguntas = dataSnapshot.getChildrenCount() + "";
-
-                    tv_boomerangs.setText(preguntas);
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                    });
 
             btn_lanzarBoomerang.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -147,6 +136,9 @@ public class Clase1Ecosistemas extends Fragment{
 
                 }
             });
+
+
+
             return view;
 
     }

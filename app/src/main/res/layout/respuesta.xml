@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_marginTop="50dp"
+    android:fillViewport="true"
+    android:scrollbars="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="390dp"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal"
+
+    >
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="390dp"
     android:layout_height="148dp"
@@ -11,70 +25,70 @@
 
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/tv_etiqueta"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_weight="1">
-                <TextView
-                    android:id="@+id/tv_etiqueta"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="hi"
-                    android:textSize="12dp"
-                    android:textColor="#B8B8B8"
-                    android:layout_marginLeft="25dp"
-                    android:layout_marginTop="15dp"
-                    />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_weight="3">
-
-                <Button
-                    android:layout_width="25dp"
-                    android:layout_height="21dp"
-
-                    android:layout_marginTop="15dp"
-                    android:background="@drawable/descargar"
-                    />
-
-                <Button
-                    android:layout_width="24dp"
-                    android:layout_height="21dp"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginTop="15dp"
-                    android:background="@drawable/megusta"
-                    android:id="@+id/btn_like"
-                    />
-            </LinearLayout>
-
-
-
-
-
-
+                android:text="hi"
+                android:textSize="12dp"
+                android:textColor="#B8B8B8"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
+                />
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="3">
+
+            <Button
+                android:layout_width="25dp"
+                android:layout_height="21dp"
+
+                android:layout_marginTop="15dp"
+                android:background="@drawable/descargar"
+                />
+
+            <Button
+                android:layout_width="24dp"
+                android:layout_height="21dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/megusta"
+                android:id="@+id/btn_like"
+                />
+        </LinearLayout>
+
+
+
+
+
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:id="@+id/foto"
-        android:src="@drawable/fotopordefecto"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/foto"
+            android:src="@drawable/fotopordefecto"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -138,7 +152,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="16dp"
             android:src="@drawable/boomerang"
-           />
+            />
 
         <TextView
             android:layout_width="wrap_content"
@@ -166,4 +180,37 @@
 
     </LinearLayout>
 
+
+
+
 </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="5dp"
+        android:text="Respuestas"
+        android:textSize="24dp"
+        android:textColor="@color/colorIcono"
+        android:textStyle="bold"
+        />
+
+    <icesi.dmi.com.finalecosistemas.ExpandableHeightListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:id="@+id/lv_respuestas"
+        >
+    </icesi.dmi.com.finalecosistemas.ExpandableHeightListView>
+
+    <Button
+        android:layout_width="397dp"
+        android:layout_height="49dp"
+        android:background="@drawable/responder"
+        android:id="@+id/btn_responder"
+        />
+
+</LinearLayout>
+
+</ScrollView>

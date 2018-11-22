@@ -10,7 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Switch;
+import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -21,7 +23,9 @@ public class CreaPreguntaArqui extends Fragment {
     FirebaseDatabase database;
     Button btn_lanzar,btn_entendido;
     Switch sw_anonimo;
+    String anonimo;
     Dialog epicDialog;
+
 
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -44,7 +48,16 @@ public class CreaPreguntaArqui extends Fragment {
         sw_anonimo = view.findViewById(R.id.sw_anonimo);
 
 
+
         epicDialog = new Dialog( view.getContext());
+
+        if(sw_anonimo.isChecked()){
+            anonimo = "Anonimo";
+
+
+        }else {
+            anonimo= "Nombre";
+        }
 
 
 
@@ -57,6 +70,7 @@ public class CreaPreguntaArqui extends Fragment {
                 Pregunta preg= new Pregunta();
                 preg.setPregunta(pregunta);
                 preg.setEtiqueta(etiqueta);
+               preg.setName(anonimo);
 
 
                 DatabaseReference publicar = database.getReference();
@@ -66,6 +80,9 @@ public class CreaPreguntaArqui extends Fragment {
 
             }
         });
+
+
+
 
 
 
@@ -96,6 +113,5 @@ public class CreaPreguntaArqui extends Fragment {
 
 
     }
-
 
 }
