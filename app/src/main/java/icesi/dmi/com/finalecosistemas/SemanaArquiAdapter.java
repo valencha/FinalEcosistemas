@@ -47,9 +47,6 @@ public class SemanaArquiAdapter extends BaseAdapter{
         final ImageView img_list=renglon.findViewById(R.id.imgList);
 
 
-
-
-
        String tipo= semanaClassArquis.get(position).getTipo();
 
 
@@ -67,7 +64,7 @@ public class SemanaArquiAdapter extends BaseAdapter{
 
 
                 fragment.getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new Clase1Arquitectura()).commit();
+                        new Clase1Arqui()).commit();
             }
         });
 
@@ -89,12 +86,39 @@ public class SemanaArquiAdapter extends BaseAdapter{
 
         }
 
+    else  if (tipo.equals("s2clase1") ) {
+
+        img_list.setImageResource(R.drawable.s2clase1arqui);
+
+    }
+
+
+    else  if (tipo.equals("s2clase2") ) {
+
+        img_list.setImageResource(R.drawable.s2clase2arqui);
+
+    }
+
 
        else  if (tipo.equals("titulo3") ) {
 
             img_list.setImageResource(R.drawable.s3);
 
         }
+
+
+    else  if (tipo.equals("s3clase1") ) {
+
+        img_list.setImageResource(R.drawable.s3clase1arqui);
+
+    }
+
+
+    else  if (tipo.equals("s3clase2") ) {
+
+        img_list.setImageResource(R.drawable.s3clase2arqui);
+
+    }
 
 
 

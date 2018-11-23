@@ -45,6 +45,16 @@ FragmentActivity fragment;
         });
 
 
+        img3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new SemanaArquiFragment()).commit();
+
+            }
+        });
+
+
         return view;
     }
 }

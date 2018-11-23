@@ -9,25 +9,25 @@ import android.widget.ImageView;
 
 import java.util.ArrayList;
 
-public class SemanaEcoAdapter extends BaseAdapter{
-    ArrayList<SemanaClassEco> semanaClassEcos;
+public class SemanaPercepAdapter extends BaseAdapter{
+    ArrayList<SemanaClassPercep> semanaClassPerceps;
     Fragment fragment;
 
 
-    public SemanaEcoAdapter(Fragment fragment){
+    public SemanaPercepAdapter(Fragment fragment){
         this.fragment = fragment;
-        semanaClassEcos = new ArrayList<>();
+        semanaClassPerceps = new ArrayList<>();
 
     }
 
     @Override
     public int getCount() {
-        return semanaClassEcos.size();
+        return semanaClassPerceps.size();
     }
 
     @Override
     public Object getItem(int i) {
-        return semanaClassEcos.get(i);
+        return semanaClassPerceps.get(i);
     }
 
     @Override
@@ -47,7 +47,7 @@ public class SemanaEcoAdapter extends BaseAdapter{
         final ImageView img_list=renglon.findViewById(R.id.imgList);
 
 
-       String tipo= semanaClassEcos.get(position).getTipo();
+       String tipo= semanaClassPerceps.get(position).getTipo();
 
 
     if(tipo.equals("titulo1")){
@@ -56,7 +56,7 @@ public class SemanaEcoAdapter extends BaseAdapter{
 
         }    else  if (tipo.equals("s1clase1") ) {
 
-        img_list.setImageResource(R.drawable.s1clase1eco);
+        img_list.setImageResource(R.drawable.s1clase1percep);
 
         img_list.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,7 +64,7 @@ public class SemanaEcoAdapter extends BaseAdapter{
 
 
                 fragment.getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new Clase1Ecosistemas()).commit();
+                        new Clase1Percep()).commit();
             }
         });
 
@@ -72,7 +72,7 @@ public class SemanaEcoAdapter extends BaseAdapter{
 
     else  if (tipo.equals("s1clase2") ) {
 
-        img_list.setImageResource(R.drawable.s1clase2eco);
+        img_list.setImageResource(R.drawable.s1clase2percep);
 
     }
 
@@ -85,23 +85,19 @@ public class SemanaEcoAdapter extends BaseAdapter{
         img_list.setImageResource(R.drawable.s2);
 
         }
-
-
     else  if (tipo.equals("s2clase1") ) {
 
-        img_list.setImageResource(R.drawable.s2clase1eco);
+        img_list.setImageResource(R.drawable.s2clase1percep);
 
     }
-
     else  if (tipo.equals("s2clase2") ) {
 
-        img_list.setImageResource(R.drawable.s2clase2eco);
+        img_list.setImageResource(R.drawable.s2clase2percep);
 
     }
 
 
-
-    else  if (tipo.equals("titulo3") ) {
+       else  if (tipo.equals("titulo3") ) {
 
             img_list.setImageResource(R.drawable.s3);
 
@@ -109,16 +105,14 @@ public class SemanaEcoAdapter extends BaseAdapter{
 
     else  if (tipo.equals("s3clase1") ) {
 
-        img_list.setImageResource(R.drawable.s3clase1eco);
+        img_list.setImageResource(R.drawable.s3clase1percep);
 
     }
-
     else  if (tipo.equals("s3clase2") ) {
 
-        img_list.setImageResource(R.drawable.s3clase2eco);
+        img_list.setImageResource(R.drawable.s3clase2percep);
 
     }
-
 
 
 
@@ -129,9 +123,9 @@ public class SemanaEcoAdapter extends BaseAdapter{
         return renglon;
     }
 
-    public void agregarImagen(SemanaClassEco semanaClassEco){
+    public void agregarImagen(SemanaClassPercep semanaClassPercep){
 
-       semanaClassEcos.add(semanaClassEco);
+       semanaClassPerceps.add(semanaClassPercep);
 
 
     }

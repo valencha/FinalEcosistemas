@@ -4,7 +4,6 @@ import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,7 +18,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class CreaPreguntaEco extends Fragment {
+public class CreaPreguntaPercep extends Fragment {
 
     EditText edt_pregunta, edt_etiqueta;
     FirebaseDatabase database;
@@ -32,7 +31,7 @@ public class CreaPreguntaEco extends Fragment {
 
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.editorpregunta, container, false);
+        View view = inflater.inflate(R.layout.editorpreguntapercep, container, false);
 
 
         database = FirebaseDatabase.getInstance();
@@ -88,7 +87,7 @@ public class CreaPreguntaEco extends Fragment {
                 preg.setFecha(fecha);
 
 
-                database.getReference().child("usuarios").child("preguntasEco").push().setValue(preg);
+                database.getReference().child("usuarios").child("preguntasPercep").push().setValue(preg);
                 ShowDialog();
 
             }
@@ -113,7 +112,7 @@ public class CreaPreguntaEco extends Fragment {
                 epicDialog.dismiss();
 
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new Clase1Ecosistemas()).commit();
+                        new Clase1Percep()).commit();
             }
         });
 

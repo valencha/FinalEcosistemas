@@ -4,6 +4,7 @@ public class Respuesta {
 
     String name;
     String respuesta;
+    String fecha;
 
 
 
@@ -25,5 +26,13 @@ public class Respuesta {
 
     public void setRespuesta(String respuesta) {
         this.respuesta = respuesta;
+    }
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
     }
 }

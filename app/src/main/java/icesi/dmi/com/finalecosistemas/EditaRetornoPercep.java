@@ -4,7 +4,6 @@ import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,38 +18,32 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class CreaPreguntaEco extends Fragment {
+public class EditaRetornoPercep extends Fragment {
 
-    EditText edt_pregunta, edt_etiqueta;
+    EditText edt_respuesta;
     FirebaseDatabase database;
     Button btn_lanzar,btn_entendido;
     Switch sw_anonimo;
     Dialog epicDialog;
-    String tipo;
-
     Boolean switchState;
+    String tipo;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.editorpregunta, container, false);
+        View view = inflater.inflate(R.layout.retornopregunta, container, false);
 
 
+        tipo=" ";
         database = FirebaseDatabase.getInstance();
 
         DatabaseReference reference = database.getReference();
 
-        tipo="";
+        edt_respuesta = view.findViewById(R.id.edt_respuesta);
 
 
-        edt_etiqueta = view.findViewById(R.id.edt_etiqueta);
+        btn_lanzar = view.findViewById(R.id.btn_responder);
 
-        edt_pregunta = view.findViewById(R.id.edt_pregunta);
-
-        btn_lanzar = view.findViewById(R.id.btn_lanzar);
-
-        sw_anonimo = view.findViewById(R.id.sw_anonimo);
-
-
+        sw_anonimo = view.findViewById(R.id.sw_anon);
 
 
         epicDialog = new Dialog( view.getContext());
@@ -60,8 +53,9 @@ public class CreaPreguntaEco extends Fragment {
         btn_lanzar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String pregunta = edt_pregunta.getText().toString();
-                String etiqueta = edt_etiqueta.getText().toString();
+                String respuesta = edt_respuesta.getText().toString();
+
+
 
                 switchState =sw_anonimo.isChecked();
 
@@ -81,14 +75,15 @@ public class CreaPreguntaEco extends Fragment {
                 String fecha = strDate;
 
 
-                Pregunta preg= new Pregunta();
-                preg.setPregunta(pregunta);
-                preg.setEtiqueta(etiqueta);
-                preg.setName(tipo);
-                preg.setFecha(fecha);
+
+                Respuesta res= new Respuesta();
+
+                res.setRespuesta(respuesta);
+                res.setName(tipo);
+                res.setFecha(fecha);
 
 
-                database.getReference().child("usuarios").child("preguntasEco").push().setValue(preg);
+                database.getReference().child("usuarios").child("respuestasPercep").push().setValue(res);
                 ShowDialog();
 
             }
@@ -100,7 +95,7 @@ public class CreaPreguntaEco extends Fragment {
     }
 
     private void ShowDialog() {
-        epicDialog.setContentView(R.layout.epic_popup_boomerang);
+        epicDialog.setContentView(R.layout.epic_popup_retorno);
 
 
 
@@ -113,7 +108,7 @@ public class CreaPreguntaEco extends Fragment {
                 epicDialog.dismiss();
 
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new Clase1Ecosistemas()).commit();
+                        new RespuestasFragmentPercep()).commit();
             }
         });
 
@@ -122,13 +117,5 @@ public class CreaPreguntaEco extends Fragment {
 
 
 
-    }
-
-    public Boolean getSwitchState() {
-        return switchState;
-    }
-
-    public void setSwitchState(Boolean switchState) {
-        this.switchState = switchState;
     }
 }

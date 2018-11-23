@@ -29,6 +29,14 @@ public class SemanaArquiFragment extends Fragment {
         String s1clase2 = "s1clase2";
 
 
+        String s2clase1 = "s2clase1";
+        String s2clase2 = "s2clase2";
+
+
+        String s3clase1 = "s3clase1";
+        String s3clase2 = "s3clase2";
+
+
         SemanaClassArqui newSemana1 = new SemanaClassArqui(titulo1);
         customAdapter.agregarImagen(newSemana1);
 
@@ -39,11 +47,33 @@ public class SemanaArquiFragment extends Fragment {
         SemanaClassArqui newS1clase2 = new SemanaClassArqui(s1clase2);
         customAdapter.agregarImagen(newS1clase2);
 
+
+
         SemanaClassArqui newSemana2 = new SemanaClassArqui(titulo2);
         customAdapter.agregarImagen(newSemana2);
 
+        SemanaClassArqui newS2clase1 = new SemanaClassArqui(s2clase1);
+        customAdapter.agregarImagen(newS2clase1);
+
+
+        SemanaClassArqui newS2clase2 = new SemanaClassArqui(s2clase2);
+        customAdapter.agregarImagen(newS2clase2);
+
+
+
+
+
+
         SemanaClassArqui newSemana3 = new SemanaClassArqui(titulo3);
         customAdapter.agregarImagen(newSemana3);
+
+
+        SemanaClassArqui newS3clase1 = new SemanaClassArqui(s3clase1);
+        customAdapter.agregarImagen(newS3clase1);
+
+
+        SemanaClassArqui newS3clase2 = new SemanaClassArqui(s3clase2);
+        customAdapter.agregarImagen(newS3clase2);
 
         return view;
 

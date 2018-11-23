@@ -1,10 +1,9 @@
 package icesi.dmi.com.finalecosistemas;
 
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.os.Bundle;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,7 +22,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 
-public class Clase1Ecosistemas extends Fragment{
+public class Clase1Percep extends Fragment{
 
     Button btn_lanzarBoomerang;
     TextView tv_boomerangs;
@@ -36,7 +35,7 @@ public class Clase1Ecosistemas extends Fragment{
 
 
         public View onCreateView(@NonNull final LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable final Bundle savedInstanceState) {
-            final View view=inflater.inflate(R.layout.s1claseunoeco, container, false);
+            final View view=inflater.inflate(R.layout.s1claseunopercep, container, false);
 
             dioLike=false;
 
@@ -50,7 +49,7 @@ public class Clase1Ecosistemas extends Fragment{
 
             db = FirebaseDatabase.getInstance();
 
-            db.getReference().child("usuarios").child("preguntasEco").addValueEventListener(new ValueEventListener() {
+            db.getReference().child("usuarios").child("preguntasPercep").addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
@@ -71,7 +70,7 @@ public class Clase1Ecosistemas extends Fragment{
             final DatabaseReference reference = db.getReference();
 
 
-            Query preguntas= reference.child("usuarios").child("preguntasEco");
+            Query preguntas= reference.child("usuarios").child("preguntasPercep");
 
             final  FirebaseListOptions<Pregunta> options= new FirebaseListOptions.Builder<Pregunta>().setLayout(R.layout.renglonrespuesta).setQuery(preguntas, Pregunta.class).build();
 
@@ -112,7 +111,7 @@ public class Clase1Ecosistemas extends Fragment{
                      btn_megusta.setOnClickListener(new View.OnClickListener() {
                       @Override
                         public void onClick(View v) {
-                          listAdapter.getRef(position).child("puntuaEco").push().setValue("F");
+                          listAdapter.getRef(position).child("puntuaPercep").push().setValue("F");
 
 
                      }
@@ -124,7 +123,7 @@ public class Clase1Ecosistemas extends Fragment{
                             @Override
                             public void onClick(View v) {
 
-                                DatabaseReference drMegusta = FirebaseDatabase.getInstance().getReference("preguntasEco").child("puntuaEco");
+                                DatabaseReference drMegusta = FirebaseDatabase.getInstance().getReference("preguntasPercep").child("puntuaPercep");
                                 drMegusta.removeValue();
 
 
@@ -142,7 +141,7 @@ public class Clase1Ecosistemas extends Fragment{
 
 
                            getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                                    new RespuestasFragmentEco()).commit();
+                                    new RespuestasFragmentPercep()).commit();
 
 
 
@@ -150,7 +149,7 @@ public class Clase1Ecosistemas extends Fragment{
 
                     });
 
-                    listAdapter.getRef(position).child("puntuaEco").addValueEventListener(new ValueEventListener() {
+                    listAdapter.getRef(position).child("puntuaPercep").addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
@@ -182,7 +181,7 @@ public class Clase1Ecosistemas extends Fragment{
                 @Override
                 public void onClick(View v) {
                     getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                            new CreaPreguntaEco()).commit();
+                            new CreaPreguntaPercep()).commit();
 
                 }
             });

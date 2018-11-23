@@ -10,12 +10,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Switch;
-import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class CreaPreguntaArqui extends Fragment {
 
@@ -23,9 +24,10 @@ public class CreaPreguntaArqui extends Fragment {
     FirebaseDatabase database;
     Button btn_lanzar,btn_entendido;
     Switch sw_anonimo;
-    String anonimo;
     Dialog epicDialog;
+    String tipo;
 
+    Boolean switchState;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -36,7 +38,7 @@ public class CreaPreguntaArqui extends Fragment {
 
         DatabaseReference reference = database.getReference();
 
-
+        tipo="";
 
 
         edt_etiqueta = view.findViewById(R.id.edt_etiqueta);
@@ -49,15 +51,8 @@ public class CreaPreguntaArqui extends Fragment {
 
 
 
+
         epicDialog = new Dialog( view.getContext());
-
-        if(sw_anonimo.isChecked()){
-            anonimo = "Anonimo";
-
-
-        }else {
-            anonimo= "Nombre";
-        }
 
 
 
@@ -67,22 +62,36 @@ public class CreaPreguntaArqui extends Fragment {
                 String pregunta = edt_pregunta.getText().toString();
                 String etiqueta = edt_etiqueta.getText().toString();
 
+                switchState =sw_anonimo.isChecked();
+
+                if(switchState){
+                    tipo="Anónimo";
+
+
+                }else{
+                    tipo = "Nombre";
+                }
+
+
+                Calendar c =Calendar.getInstance();
+
+                SimpleDateFormat mdformat = new SimpleDateFormat("HH:mm:ss");
+                String strDate = mdformat.format(c.getTime());
+                String fecha = strDate;
+
+
                 Pregunta preg= new Pregunta();
                 preg.setPregunta(pregunta);
                 preg.setEtiqueta(etiqueta);
-               preg.setName(anonimo);
+                preg.setName(tipo);
+                preg.setFecha(fecha);
 
 
-                DatabaseReference publicar = database.getReference();
-
-                publicar.child("usuarios").child("preguntasArqui").push().setValue(preg);
+                database.getReference().child("usuarios").child("preguntasArqui").push().setValue(preg);
                 ShowDialog();
 
             }
         });
-
-
-
 
 
 
@@ -103,7 +112,7 @@ public class CreaPreguntaArqui extends Fragment {
                 epicDialog.dismiss();
 
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new Clase1Arquitectura()).commit();
+                        new Clase1Arqui()).commit();
             }
         });
 
@@ -114,4 +123,11 @@ public class CreaPreguntaArqui extends Fragment {
 
     }
 
+    public Boolean getSwitchState() {
+        return switchState;
+    }
+
+    public void setSwitchState(Boolean switchState) {
+        this.switchState = switchState;
+    }
 }

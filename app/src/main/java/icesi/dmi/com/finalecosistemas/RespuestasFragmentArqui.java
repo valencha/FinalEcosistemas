@@ -7,9 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseListAdapter;
@@ -21,10 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.Observable;
-import java.util.Observer;
-
-public class RespuestasFragment extends Fragment{
+public class RespuestasFragmentArqui extends Fragment{
 
 
     Button btn_respuesta;
@@ -58,7 +53,7 @@ public class RespuestasFragment extends Fragment{
 
 
 
-        Query respuestas= reference.child("usuarios").child("respuestas");
+        Query respuestas= reference.child("usuarios").child("respuestasArqui");
 
         final  FirebaseListOptions<Respuesta> options= new FirebaseListOptions.Builder<Respuesta>().setLayout(R.layout.renglonrespuesta2).setQuery(respuestas, Respuesta.class).build();
 
@@ -79,7 +74,7 @@ public class RespuestasFragment extends Fragment{
 
 
 
-                listAdapter.getRef(position).child("puntua").addValueEventListener(new ValueEventListener() {
+                listAdapter.getRef(position).child("puntuaResArqui").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
@@ -108,7 +103,7 @@ public class RespuestasFragment extends Fragment{
             @Override
             public void onClick(View v) {
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new EditaRetorno()).commit();
+                        new EditaRetornoArqui()).commit();
 
             }
         });

@@ -35,7 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="¿Qué es la arquitectura de información?"
+            android:text="¿Qué es la percepción?"
             android:textAlignment="center"
             android:textColor="#5D5D5D"
             android:textStyle="bold" />
@@ -76,7 +76,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/tv_boomerangs"
+                android:id="@+id/tv_boomerang"
                 android:layout_width="52dp"
                 android:layout_height="29dp"
                 android:layout_marginEnd="40dp"

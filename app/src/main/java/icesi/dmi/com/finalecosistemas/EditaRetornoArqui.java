@@ -15,19 +15,25 @@ import android.widget.Switch;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class EditaRetorno extends Fragment {
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
+public class EditaRetornoArqui extends Fragment {
 
     EditText edt_respuesta;
     FirebaseDatabase database;
     Button btn_lanzar,btn_entendido;
     Switch sw_anonimo;
     Dialog epicDialog;
+    Boolean switchState;
+    String tipo;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.retornopregunta, container, false);
+        View view = inflater.inflate(R.layout.retornopreguntaarqui, container, false);
 
 
+        tipo=" ";
         database = FirebaseDatabase.getInstance();
 
         DatabaseReference reference = database.getReference();
@@ -49,12 +55,35 @@ public class EditaRetorno extends Fragment {
             public void onClick(View v) {
                 String respuesta = edt_respuesta.getText().toString();
 
-                Respuesta preg= new Respuesta();
-
-                preg.setRespuesta(respuesta);
 
 
-                database.getReference().child("usuarios").child("respuestas").push().setValue(preg);
+                switchState =sw_anonimo.isChecked();
+
+                if(switchState){
+                    tipo="Anónimo";
+
+
+                }else{
+                    tipo = "Nombre";
+                }
+
+
+                Calendar c =Calendar.getInstance();
+
+                SimpleDateFormat mdformat = new SimpleDateFormat("HH:mm:ss");
+                String strDate = mdformat.format(c.getTime());
+                String fecha = strDate;
+
+
+
+                Respuesta res= new Respuesta();
+
+                res.setRespuesta(respuesta);
+                res.setName(tipo);
+                res.setFecha(fecha);
+
+
+                database.getReference().child("usuarios").child("respuestasArqui").push().setValue(res);
                 ShowDialog();
 
             }
@@ -79,7 +108,7 @@ public class EditaRetorno extends Fragment {
                 epicDialog.dismiss();
 
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new RespuestasFragment()).commit();
+                        new RespuestasFragmentArqui()).commit();
             }
         });
 
