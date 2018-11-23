@@ -39,32 +39,40 @@
         android:layout_gravity="center_horizontal"/>
 
 
-    <ImageView
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_height="48dp"
+        android:layout_height="wrap_content"
         android:padding="0dp"
-        android:src="@drawable/pregunta" />
+        android:text="Pregunta"
+        android:textColor="#952777"
+        android:textStyle="bold"
+        android:layout_marginLeft="20dp"
+        android:textSize="20dp"/>
 
     <EditText
         android:layout_width="370dp"
         android:id="@+id/edt_pregunta"
         android:layout_height="90dp"
         android:textAlignment="textStart"
-        android:hint="Escribe aqui tus dudas"
+        android:hint="Escribe aqui todas tus dudas"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
         android:padding="10dp"
         android:layout_marginTop="10dp"
-        android:background="@drawable/style_edtext"
-        />
+        android:background="@drawable/style_edtext" />
 
 
-    <ImageView
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:src="@drawable/etiqueta"
-        android:layout_marginTop="10dp"/>
+        android:layout_height="wrap_content"
+       android:text="Etiquetas"
+        android:layout_marginLeft="20dp"
+        android:textSize="20dp"
+        android:textColor="#952777"
+        android:textStyle="bold"
+
+        android:layout_marginTop="18dp"/>
 
     <EditText
         android:layout_width="370dp"
@@ -72,9 +80,11 @@
         android:layout_height="70dp"
         android:layout_marginLeft="20dp"
         android:textSize="15dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:layout_marginRight="20dp"
         android:background="@drawable/style_edtext"
+        android:shadowRadius="@integer/google_play_services_version"
+
         android:hint="Escribe aqui los tags para que podamos ordenarlo todo."
         android:padding="10dp" />
 
@@ -88,6 +98,7 @@
         android:layout_height="wrap_content"
         android:text="Pregunta anónima"
         android:textColor="#5D5D5D"
+
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"/>
 

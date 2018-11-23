@@ -8,10 +8,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.Switch;
 import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseListAdapter;
@@ -30,13 +29,18 @@ public class Clase1Ecosistemas extends Fragment{
     TextView tv_boomerangs;
     ExpandableHeightListView lv_preguntas;
     FirebaseDatabase db;
-
+    Boolean dioLike;
     FirebaseListAdapter<Pregunta> listAdapter;
+
 
 
 
         public View onCreateView(@NonNull final LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable final Bundle savedInstanceState) {
             final View view=inflater.inflate(R.layout.s1claseunoeco, container, false);
+
+            dioLike=false;
+
+
 
             btn_lanzarBoomerang = view.findViewById(R.id.btn_lanzar);
 
@@ -46,17 +50,30 @@ public class Clase1Ecosistemas extends Fragment{
 
             db = FirebaseDatabase.getInstance();
 
+            db.getReference().child("usuarios").child("preguntas").addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                    String views = dataSnapshot.getChildrenCount()+"";
+
+                    tv_boomerangs.setText(views);
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
 
 
-            DatabaseReference reference = db.getReference();
+
+            final DatabaseReference reference = db.getReference();
 
 
             Query preguntas= reference.child("usuarios").child("preguntas");
 
-           final FirebaseListOptions<Pregunta> options= new FirebaseListOptions.Builder<Pregunta>().setLayout(R.layout.renglonrespuesta).setQuery(preguntas, Pregunta.class).build();
-
-
-
+            final  FirebaseListOptions<Pregunta> options= new FirebaseListOptions.Builder<Pregunta>().setLayout(R.layout.renglonrespuesta).setQuery(preguntas, Pregunta.class).build();
 
             listAdapter = new FirebaseListAdapter<Pregunta>(options) {
 
@@ -64,55 +81,92 @@ public class Clase1Ecosistemas extends Fragment{
                 @Override
                 protected void populateView(@NonNull View v, @NonNull Pregunta model, final int position) {
 
-                    Button btn_megusta = v.findViewById(R.id.btn_like);
-                    TextView pregunta = v.findViewById(R.id.tv_pregunta);
-                    TextView etiqueta= v.findViewById(R.id.tv_etiqueta);
+                    ImageView btn_megusta = v.findViewById(R.id.btn_like);
+                    final TextView pregunta = v.findViewById(R.id.tv_pregunta);
+                    final TextView etiqueta= v.findViewById(R.id.tv_etiqueta);
+                    final TextView nombre = v.findViewById(R.id.tv_nombre);
+                    final  TextView time = v.findViewById(R.id.tv_time);
+                   ImageView foto = v.findViewById(R.id.foto);
+
 
 
                    final TextView tvLikes= v.findViewById(R.id.tv_like);
 
 
                    pregunta.setText(model.getPregunta());
-
                    etiqueta.setText(model.getEtiqueta());
-
-                    db.getReference().child("usuarios").child("preguntas").addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                            String views = Integer.toString((int) dataSnapshot.getChildrenCount()) ;
-
-                            tv_boomerangs.setText(views);
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                        }
-                    });
+                   nombre.setText(model.getName());
+                   time.setText(model.getFecha());
 
 
-                    btn_megusta.setOnClickListener(new View.OnClickListener() {
-                        @Override
+                  if(model.getName()=="Anónimo"){
+                   foto.setImageResource(R.drawable.fotoanonimo);
+
+                 }else{
+                foto.setImageResource(R.drawable.fotopordefecto);
+                 }
+
+
+
+                    if(dioLike==false) {
+                     btn_megusta.setOnClickListener(new View.OnClickListener() {
+                      @Override
                         public void onClick(View v) {
-                            listAdapter.getRef(position).child("puntua").push().setValue("F");
+                          listAdapter.getRef(position).child("puntua").push().setValue("F");
+
+
+                     }
+                      });
+
+                    dioLike=true;
+                 }else if (dioLike==true) {
+                        btn_megusta.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+
+
+                                listAdapter.getRef(position).child("puntua").addValueEventListener(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                                        String megusta = Integer.toString((int) dataSnapshot.getChildrenCount());
+                                        int cantLikes = Integer.parseInt(megusta);
+                                        cantLikes=-1;
+                                        String nuevoLikes = Integer.toString(cantLikes);
+                                        tvLikes.setText(nuevoLikes);
+
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                    }
+                                });
+
+
+                            }
+                        });
+                        dioLike=false;
+
+                    }
+
+
+                    lv_preguntas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+
+
+                           getFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                                    new RespuestasFragment()).commit();
+
+
+
                         }
+
                     });
 
-
-                    listAdapter.getRef(position).child("puntua").addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        String likes= Integer.toString((int) dataSnapshot.getChildrenCount());
-                            tvLikes.setText(likes);
-
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                        }
-                    });
 
 
 
@@ -121,8 +175,9 @@ public class Clase1Ecosistemas extends Fragment{
                 }
             };
 
-            lv_preguntas.setAdapter(listAdapter);
 
+
+            lv_preguntas.setAdapter(listAdapter);
 
 
 
@@ -139,6 +194,8 @@ public class Clase1Ecosistemas extends Fragment{
 
 
 
+
+
             return view;
 
     }
@@ -148,6 +205,10 @@ public class Clase1Ecosistemas extends Fragment{
     @Override
     public void onStart() {
         super.onStart();
+
+
+
+
         //iniciar adaptador
        listAdapter.startListening();
     }

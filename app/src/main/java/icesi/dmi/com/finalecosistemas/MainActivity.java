@@ -26,7 +26,8 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        db = FirebaseDatabase.getInstance();
+        db= FirebaseDatabase.getInstance();
+
         img_1= findViewById(R.id.img_1);
         edt_name= findViewById(R.id.edt_name);
         edt_pass=findViewById(R.id.edt_pass);

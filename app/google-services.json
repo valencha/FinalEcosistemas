@@ -1,35 +1,27 @@
 {
   "project_info": {
-    "project_number": "1024420627545",
-    "firebase_url": "https://finalecosistemas-1234.firebaseio.com",
-    "project_id": "finalecosistemas-1234",
-    "storage_bucket": "finalecosistemas-1234.appspot.com"
+    "project_number": "870974817336",
+    "firebase_url": "https://basefinal-873c7.firebaseio.com",
+    "project_id": "basefinal-873c7",
+    "storage_bucket": "basefinal-873c7.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1024420627545:android:6a61062ab1f3d0a2",
+        "mobilesdk_app_id": "1:870974817336:android:6a61062ab1f3d0a2",
         "android_client_info": {
           "package_name": "icesi.dmi.com.finalecosistemas"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1024420627545-9aelg9heuc300nfffdnrq4sqr9m7d76o.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "icesi.dmi.com.finalecosistemas",
-            "certificate_hash": "2ad4b37368dbc461fb4c118940b988055fa2d4af"
-          }
-        },
-        {
-          "client_id": "1024420627545-i50fb7sq3oobfv2s9mrjbfmp89gsud0t.apps.googleusercontent.com",
+          "client_id": "870974817336-drqopstlbj99vfm6c5di2i0u09v6mo7n.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDRxmOHhQ1Y-uxFbUz6reb8S_2Nj_8x-54"
+          "current_key": "AIzaSyCKpryrdThKd4wMBC7hwaCc22tZCCGHbgA"
         }
       ],
       "services": {
@@ -37,13 +29,8 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "1024420627545-i50fb7sq3oobfv2s9mrjbfmp89gsud0t.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "status": 1,
+          "other_platform_oauth_client": []
         },
         "ads_service": {
           "status": 2

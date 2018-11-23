@@ -5,9 +5,9 @@ public class Usuario {
      String name;
      String pass;
 
+public Usuario(){
 
-
-
+}
 
     public Usuario(String name, String pass) {
         this.name = name;

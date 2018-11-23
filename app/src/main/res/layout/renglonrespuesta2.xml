@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="390dp"
     android:layout_height="148dp"
@@ -13,26 +13,13 @@
 
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginLeft="300dp"
+        >
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_weight="1">
-            <TextView
-                android:id="@+id/tv_etiqueta"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="hi"
-                android:textSize="12dp"
-                android:textColor="#B8B8B8"
-                android:layout_marginLeft="25dp"
-                android:layout_marginTop="15dp"
-                />
-        </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -85,7 +72,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nombre usuario"
+                android:text="Anónimo"
                 android:id="@+id/tv_nombre"
                 android:textSize="16dp"
                 android:textStyle="bold"

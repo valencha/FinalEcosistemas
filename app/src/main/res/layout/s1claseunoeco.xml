@@ -100,15 +100,6 @@
             android:textAlignment="center"
             android:textColor="#5D5D5D"
             android:textStyle="normal" />
-    <Button
-        android:id="@+id/btn_lanzar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:background="@drawable/lanzarboomerang" />
-
-
 
 
         <icesi.dmi.com.finalecosistemas.ExpandableHeightListView
@@ -118,6 +109,15 @@
             android:layout_gravity="center_horizontal"
             >
         </icesi.dmi.com.finalecosistemas.ExpandableHeightListView>
+
+
+    <Button
+        android:id="@+id/btn_lanzar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/lanzarboomerang" />
 
     <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"

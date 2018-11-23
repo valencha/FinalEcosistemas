@@ -2,7 +2,7 @@
 
 <ScrollView android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:layout_marginTop="50dp"
+    android:layout_marginTop="100dp"
     android:fillViewport="true"
     android:scrollbars="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android">
@@ -36,7 +36,7 @@
             android:orientation="horizontal"
             android:layout_weight="1">
             <TextView
-                android:id="@+id/tv_etiqueta"
+                android:id="@+id/tv_et"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="hi"
@@ -98,7 +98,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Nombre usuario"
-                android:id="@+id/tv_nombre"
+                android:id="@+id/tv_nom"
                 android:textSize="16dp"
                 android:textStyle="bold"
                 android:textColor="#EE5514"
@@ -115,7 +115,7 @@
                 android:textColor="#5D5D5D"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
-                android:id="@+id/tv_pregunta"
+                android:id="@+id/tv_preg"
                 />
         </LinearLayout>
 
@@ -160,7 +160,7 @@
             android:layout_marginTop="12dp"
             android:layout_marginLeft="10dp"
             android:text="1"
-            android:id="@+id/tv_respuestas"/>
+            android:id="@+id/tv_retornos"/>
 
         <ImageView
             android:layout_width="23dp"

@@ -39,21 +39,24 @@ public class AyudaFragment extends Fragment {
 
     private void cargarDatos(){
 
-        ArrayList<String> listComoUsar = new ArrayList<>();
+
         ArrayList<String> preguntasFrecuentes = new ArrayList<>();
+        ArrayList<String> listComoUsar = new ArrayList<>();
 
-        listAyuda.add("como");
+
         listAyuda.add("preguntas");
+        listAyuda.add("como");
+        preguntasFrecuentes.add("pregunta1");
+        preguntasFrecuentes.add("pregunta2");
+        preguntasFrecuentes.add("pregunta3");
+        preguntasFrecuentes.add("pregunta4");
+       listComoUsar.add("ques");
+        listComoUsar.add("utilizar");
 
 
-        listComoUsar.add("que");
-        listComoUsar.add("como");
-          preguntasFrecuentes.add("pregunta1");
+        mapChild.put(listAyuda.get(0),preguntasFrecuentes);
+        mapChild.put(listAyuda.get(1),listComoUsar);
 
-
-
-        mapChild.put(listAyuda.get(0),listComoUsar);
-        mapChild.put(listAyuda.get(1),preguntasFrecuentes);
 
         adapter = new ExplAdapter(this,listAyuda,mapChild);
         expandableListView.setAdapter(adapter);

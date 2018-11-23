@@ -9,6 +9,7 @@ public class Pregunta {
     String name;
     String pregunta;
     String etiqueta;
+    String fecha;
 
 
 
@@ -38,5 +39,11 @@ public class Pregunta {
         this.etiqueta = etiqueta;
     }
 
+    public String getFecha() {
+        return fecha;
+    }
 
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
 }

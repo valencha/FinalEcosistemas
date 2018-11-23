@@ -47,9 +47,6 @@ public class SemanaEcoAdapter extends BaseAdapter{
         final ImageView img_list=renglon.findViewById(R.id.imgList);
 
 
-
-
-
        String tipo= semanaClassEcos.get(position).getTipo();
 
 

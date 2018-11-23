@@ -69,12 +69,12 @@ public class ExplAdapter extends BaseExpandableListAdapter {
 
         String tipo= (String) getGroup(groupPosition);
 
-        if(tipo.equals("como")){
-            imageView.setImageResource(R.drawable.como);
-
-
-        }    else  if (tipo.equals("preguntas") ) {
+        if(tipo.equals("preguntas")){
             imageView.setImageResource(R.drawable.preguntasfre);
+
+
+        }  else{
+            imageView.setImageResource(R.drawable.iniciaren);
 
 
         }
@@ -85,51 +85,58 @@ public class ExplAdapter extends BaseExpandableListAdapter {
 
     @Override
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View view, ViewGroup parent) {
-        String num = "";
-        String titulo ="";
-        String descripcion = "";
 
-        String tipo= (String) getGroup(groupPosition);
+
+        String tipo= (String) getChild(groupPosition,childPosition);
 
         LayoutInflater inflater= context.getLayoutInflater();
        view=inflater.inflate(R.layout.elv_child, null,false);
 
-        TextView tv_num = view.findViewById(R.id.tv_num);
-        TextView tv_titulo = view.findViewById(R.id.tv_titulo);
-        TextView tv_descripcion = view.findViewById(R.id.tv_descripcion);
+        ImageView tv_imagen = view.findViewById(R.id.img_ayuda);
 
-        if(tipo.equals("que")){
-            num = "1";
-            titulo= "¿Qué es Boomerang?";
-            descripcion = "Boomerang es una plataforma de preguntas y respuestas que busca unir a los alumnos " +
-                    "con sus docentes durante el proceso de aprendizaje activo. Esto lo logra a partir de una sección " +
-                    "donde los alumnos pueden manifestar sus dudas a sus demás compañeros y al docente, a la vez que este último " +
-                    "puede evaluar a sus estudiantes por medio de cuestionarios que le permiten ver el nivel de comprensión de un tema en especifico.";
+        if(tipo.equals("pregunta1")){
+            tv_imagen.setImageResource(R.drawable.como);
+
+
         }
-
-     else{
-            num = "1";
-            titulo= "¿Qué es Boomerang?";
-            descripcion = "Boomerang es una plataforma de preguntas y respuestas que busca unir a los alumnos " +
-                    "con sus docentes durante el proceso de aprendizaje activo. Esto lo logra a partir de una sección " +
-                    "donde los alumnos pueden manifestar sus dudas a sus demás compañeros y al docente, a la vez que este último " +
-                    "puede evaluar a sus estudiantes por medio de cuestionarios que le permiten ver el nivel de comprensión de un tema en especifico.";
+        if(tipo.equals("pregunta2")){
+            tv_imagen.setImageResource(R.drawable.quepasa);
 
 
         }
 
-        if(tipo.equals("como")){
-            num = "1";
-            titulo= "¿Qué es Boomerang?";
-            descripcion = "Boomerang es una plataforma de preguntas y respuestas que busca unir a los alumnos " +
-                    "con sus docentes durante el proceso de aprendizaje activo. Esto lo logra a partir de una sección " +
-                    "donde los alumnos pueden manifestar sus dudas a sus demás compañeros y al docente, a la vez que este último " +
-                    "puede evaluar a sus estudiantes por medio de cuestionarios que le permiten ver el nivel de comprensión de un tema en especifico.";
+
+        if(tipo.equals("pregunta3")){
+            tv_imagen.setImageResource(R.drawable.pasa);
+
+
         }
 
-        tv_num.setText(num);
-        tv_titulo.setText(titulo);
-        tv_descripcion.setText(descripcion);
+
+        if(tipo.equals("pregunta4")){
+            tv_imagen.setImageResource(R.drawable.quemas);
+
+
+        }
+
+
+        if(tipo.equals("ques")){
+            tv_imagen.setImageResource(R.drawable.ques);
+
+
+        }
+
+
+        if(tipo.equals("utilizar")){
+            tv_imagen.setImageResource(R.drawable.comoutilizar);
+
+
+        }
+
+
+
+
+
 
 
         return view;
