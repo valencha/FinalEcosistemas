@@ -1,109 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:layout_marginTop="50dp"
     android:background="#F8F8F8"
-    android:orientation="vertical">
-
-    <android.support.constraint.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/preguntaenresponder"/>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Pregunta a responder"
-            android:id="@+id/tv_responder"
-            android:textStyle="bold"
-            android:textColor="#5D5D5D"
-            android:textSize="18dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="30dp"/>
-        </LinearLayout>
-
-
-
-    </android.support.constraint.ConstraintLayout>
-
+    >
     <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" android:orientation="horizontal">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#EE5514"
-        android:textSize="23dp"
-        android:layout_marginLeft="20dp"
-        android:textStyle="bold"
-        android:text="Tu retorno"/>
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:background="#F8F8F8"
+        android:orientation="vertical">
 
-        <Switch
-            android:id="@+id/sw_anon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
-            android:text="Anónimo"
-            android:textColor="#999999"
-            android:textSize="18dp"
-            android:theme="@style/SwitchTheme" />
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/preguntaenresponder"/>
 
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-    <android.support.constraint.ConstraintLayout
-        android:layout_width="380dp"
-        android:layout_height="407dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/camporesponder">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pregunta a responder"
+                    android:id="@+id/tv_responder"
+                    android:textStyle="bold"
+                    android:textColor="#5D5D5D"
+                    android:textSize="18dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="30dp"/>
+            </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
 
-            android:orientation="vertical">
 
-    <EditText
-        android:layout_width="380dp"
-        android:layout_height="400dp"
-        android:hint="Escribe aqui la respuesta a la pregunta"
-        android:layout_marginLeft="20dp"
-        android:id="@+id/edt_respuesta"
-        android:layout_marginRight="20dp"
-        android:background="@color/colorTransparent"
-        android:textAlignment="textStart"
-        tools:ignore="RtlCompat" />
-
-        </LinearLayout>
+        </android.support.constraint.ConstraintLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="407dp"
-            android:gravity="end">
-
-            <Button
-                android:id="@+id/btn_responder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:orientation="horizontal">
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="280dp"
-                android:layout_marginTop="360dp"
-                android:background="@color/colorTransparent"
-                android:text="Responder"
-                android:textColor="@color/colorIcono"
-                android:textStyle="bold" />
+                android:textColor="#EE5514"
+                android:textSize="23dp"
+                android:layout_marginLeft="20dp"
+                android:textStyle="bold"
+                android:text="Tu retorno"/>
+
+            <Switch
+                android:id="@+id/sw_anon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:text="Anónimo"
+                android:textColor="#999999"
+                android:textSize="18dp"
+                android:theme="@style/SwitchTheme" />
+
         </LinearLayout>
 
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="380dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/camporesponder">
 
-    </android.support.constraint.ConstraintLayout>
-</LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+
+                android:orientation="vertical">
+
+                <EditText
+                    android:layout_width="380dp"
+                    android:layout_height="300dp"
+                    android:hint="Escribe aqui la respuesta a la pregunta"
+                    android:layout_marginLeft="20dp"
+                    android:id="@+id/edt_respuesta"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/colorTransparent"
+                    android:textAlignment="textStart"
+                    tools:ignore="RtlCompat" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="290dp"
+                android:gravity="end">
+
+                <Button
+                    android:id="@+id/btn_responder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="280dp"
+                    android:layout_marginTop="260dp"
+                    android:background="@color/colorTransparent"
+                    android:text="Responder"
+                    android:textColor="@color/colorIcono"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+        </android.support.constraint.ConstraintLayout>
+    </LinearLayout>
+</RelativeLayout>

@@ -36,7 +36,7 @@ public class RespuestasFragmentArqui extends Fragment{
 
 
     public View onCreateView(@NonNull final LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable final Bundle savedInstanceState) {
-        final View view = inflater.inflate(R.layout.respuesta, container, false);
+        final View view = inflater.inflate(R.layout.respuestaarqui, container, false);
 
 
         btn_respuesta = view.findViewById(R.id.btn_responder);

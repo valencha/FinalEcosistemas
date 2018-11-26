@@ -39,7 +39,7 @@
                 android:id="@+id/tv_et"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="hi"
+                android:text="#percep #concepto"
                 android:textSize="12dp"
                 android:textColor="#B8B8B8"
                 android:layout_marginLeft="25dp"
@@ -109,7 +109,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="hi"
+                android:text="¿Que es la percepcion?"
                 android:textSize="15dp"
                 android:textStyle="bold"
                 android:textColor="#5D5D5D"
@@ -144,7 +144,7 @@
             android:layout_marginTop="12dp"
             android:layout_marginLeft="10dp"
             android:id="@+id/tv_like"
-            android:text="1"/>
+            android:text="0"/>
 
         <ImageView
             android:layout_width="10dp"
@@ -159,7 +159,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:layout_marginLeft="10dp"
-            android:text="1"
+            android:text="0"
             android:id="@+id/tv_retornos"/>
 
         <ImageView
@@ -175,7 +175,7 @@
             android:layout_marginTop="12dp"
             android:layout_marginLeft="10dp"
             android:id="@+id/tv_time"
-            android:text="1"/>
+            android:text="13:56:31"/>
 
 
     </LinearLayout>

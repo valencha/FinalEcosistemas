@@ -30,7 +30,7 @@ public class EditaRetornoPercep extends Fragment {
 
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.retornopregunta, container, false);
+        View view = inflater.inflate(R.layout.retornopreguntapercep, container, false);
 
 
         tipo=" ";

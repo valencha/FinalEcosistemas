@@ -138,10 +138,18 @@ public class Clase1Percep extends Fragment{
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+                           // Bundle bundle = new Bundle();
+                            //bundle.putString("params","hola");
 
 
+
+
+                           /// respuestasFragment.setArguments(bundle);
+
+
+                            Fragment respuestasFragment = new RespuestasFragmentPercep();
                            getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                                    new RespuestasFragmentPercep()).commit();
+                                   respuestasFragment).commit();
 
 
 

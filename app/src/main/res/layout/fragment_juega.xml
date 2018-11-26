@@ -37,7 +37,7 @@ Ingresa el código que te muestre tu profesor para iniciar la partida."
 
 
         <EditText
-
+            android:id="@+id/code"
             android:layout_width="303dp"
             android:layout_height="47dp"
             android:layout_marginTop="100dp"
@@ -48,8 +48,9 @@ Ingresa el código que te muestre tu profesor para iniciar la partida."
 
         <Button
             android:layout_width="398dp"
+            android:id="@+id/btnPlay"
             android:layout_height="wrap_content"
-            android:layout_marginTop="170dp"
+            android:layout_marginTop="100dp"
             android:background="@drawable/iniciar"
 
             />

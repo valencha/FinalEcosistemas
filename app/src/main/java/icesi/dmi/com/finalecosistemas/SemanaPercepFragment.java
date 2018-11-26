@@ -16,7 +16,7 @@ public class SemanaPercepFragment extends Fragment {
     SemanaPercepAdapter customAdapter;
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_semana, container, false);
+        View view = inflater.inflate(R.layout.fragment_semanapercep, container, false);
 
         lv_semana = view.findViewById(R.id.lv_semanas);
         customAdapter = new SemanaPercepAdapter(this);

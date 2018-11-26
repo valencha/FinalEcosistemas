@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="50dp"
+    android:background="#F8F8F8"
+    >
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -62,7 +68,7 @@
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="380dp"
-        android:layout_height="407dp"
+        android:layout_height="300dp"
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
         android:background="@drawable/camporesponder">
@@ -76,7 +82,7 @@
 
     <EditText
         android:layout_width="380dp"
-        android:layout_height="400dp"
+        android:layout_height="300dp"
         android:hint="Escribe aqui la respuesta a la pregunta"
         android:layout_marginLeft="20dp"
         android:id="@+id/edt_respuesta"
@@ -89,7 +95,7 @@
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="407dp"
+            android:layout_height="290dp"
             android:gravity="end">
 
             <Button
@@ -97,7 +103,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="280dp"
-                android:layout_marginTop="360dp"
+                android:layout_marginTop="260dp"
                 android:background="@color/colorTransparent"
                 android:text="Responder"
                 android:textColor="@color/colorIcono"
@@ -107,3 +113,4 @@
 
     </android.support.constraint.ConstraintLayout>
 </LinearLayout>
+</RelativeLayout>
